@@ -32,6 +32,7 @@ client.on("messageCreate", (message) => {
   const triggerWordBF = ["blacklisted farm", "blacklisted account", "blacklisted opensea", "farm blacklisted", "goblin detected", "goblin farm", "goblin detect"]; //Blacklisted Farm
   const triggerWordWEB3 = ["web3 error", "wallet not detected", "can't find wallet", "error web3"]; //Web3 Error
   const triggerWordHW = ["wallet hacked", "wallet comprised", "account hacked", "account compromised", "wallet stolen", "account stolen", "hacked wallet", "hacked account"]; //Hacked Wallet
+  const triggerWordSR = ["cant migrate", "can't migrate", "supply reach", "supply reached", "want to migrate", "want to create"]; //Supply Reached
 
   // Something Went Wrong Reply
   for (var i = 0; i < triggerWordsSWR.length; i++) {
@@ -197,6 +198,32 @@ client.on("messageCreate", (message) => {
         type: "rich",
         title: `🟠 Info: \"Hacked Wallet\" `,
         description: "We are sorry to hear that, but unfortunately there is nothing we can do on our side.\n\nYou can still try to send the NFT of your farm to a new wallet if you still have access to it, here is how to do it:\n\n`1. Go to https://opensea.io/account\n2. Click on your farm NFT\n3. Click on the \"Transfer\" button upper right corner\n4. Follow the instructions`",
+        color: 0x00FFFF
+      }],
+      components: [{
+        type: 1,
+          components: [
+          {
+            style: 5,
+            label: `Our Knowledge Base`,
+            url: `https://sunflowerland.freshdesk.com/support/solutions`,
+            disabled: false,
+            type: 2
+          }
+        ]}],
+      });
+      break;
+    }
+  }
+
+  // Supply Reached Reply
+  for (var i = 0; i < triggerWordSR.length; i++) {
+    if (message.content.toLowerCase().includes(triggerWordSR[i])) {
+      message.react('👀');
+      message.reply({ embeds: [{
+        type: "rich",
+        title: `🟠 Info: \"Supply Reached\" `,
+        description: "The **100,000 Open Beta slots are full**, we are not accepting any new players for now.\n\n⚠️ In addition, the migration system is no longer available. If you were not able to migrate your old farms during the provided period, you will not be able to do it anymore.\n\nKeep an eye on <#897231700776615936> and our social networks to be notified when new spots are added.",
         color: 0x00FFFF
       }],
       components: [{
