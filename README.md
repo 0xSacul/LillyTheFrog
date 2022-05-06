@@ -1,5 +1,5 @@
 
-# Project Title
+# Lilly The Frog
 
 A simple Discord.JS bot, made by Sacul for Sunflower Land.
 
