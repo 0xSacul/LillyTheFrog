@@ -9,8 +9,20 @@ A simple Discord.JS bot, made by Sacul for Sunflower Land.
 
 The bot analyzes each message sent in channel defined, if a message contains words he knows, he will give the appropriate answer
 
-For exemple, if you say "Please help I've a Someting went wrong error" the bot will analyze the message and will find the following words **Someting, Went, Wrong**.
+For exemple, if you say "Please help I've a Someting went wrong error" the bot will analyze the message and will find the following words 
+
+**Someting, Went, Wrong**.
 Then he will automatically reply to the message with a guide to try to solve the problem.
+
+**Available Q&A:**
+• Something went wrong
+• Clock not in sync
+• Too many requests
+• Grey/Black and white farm
+• Blacklisted farm
+• Web3 Error
+• Hacked/Stolen wallet
+• Supply reached
 ## How to install
 
 Go to `config/config.json` and enter your bot token and the id of the specific channel(s).
