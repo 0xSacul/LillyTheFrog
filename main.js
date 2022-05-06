@@ -1,3 +1,6 @@
+/*
+YES I KNOW MY CODE IS NOT PERFECT
+*/
 const { Client, Intents } = require("discord.js");
 const config = require("./config/config.json");
 const client = new Client({
@@ -12,13 +15,20 @@ client.on("ready", () => {
 
 client.on("messageCreate", (message) => {
   if (message.author.bot) return; // If the message is from a bot, return.
+
+  // Nothing personal here, keep scrolling
+  if (message.content.toLowerCase().includes("sacul is amazing")) {
+    message.react("💯");
+    message.reply("I totally agree with you.");
+  }
+  
   if (message.channel.id != config.channel) return; // If the message is not in the right channel, return.
 
   // Here we got every trigger words for every bugs/issues solution
-  const triggerWordsSWR = ["something went wrong", "smthing went wrong", "tried to sync", "can't sync", "sync error"]; //Something Went Wrong
+  const triggerWordsSWR = ["something went wrong", "smthing went wrong", "tried to sync", "can't sync", "sync error", "cant sync"]; //Something Went Wrong
   const triggerWordsCNIS = ["clock not in sync", "clock not synced", "clock sync error", "clock error"]; //Clock Not In Sync
   const triggerWordsTMR = ["too many request", "to many request", "too many requests", "to many requests"]; //Too Many Requests
-  const triggerWordBAWF = ["my farm is grey", "grey farm", "black and white farm"]; //Black and White Farm
+  const triggerWordBAWF = ["my farm is grey", "grey farm", "black and white farm", "no color", "no colors"]; //Black and White Farm
   const triggerWordBF = ["blacklisted farm", "blacklisted account", "blacklisted opensea", "farm blacklisted", "goblin detected", "goblin farm", "goblin detect"]; //Blacklisted Farm
   const triggerWordWEB3 = ["web3 error", "wallet not detected", "can't find wallet", "error web3"]; //Web3 Error
   const triggerWordHW = ["wallet hacked", "wallet comprised", "account hacked", "account compromised", "wallet stolen", "account stolen", "hacked wallet", "hacked account"]; //Hacked Wallet
@@ -26,10 +36,11 @@ client.on("messageCreate", (message) => {
   // Something Went Wrong Reply
   for (var i = 0; i < triggerWordsSWR.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordsSWR[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🔴 Error: \"Something Went Wrong\" `,
-        description: "This error can mean a lot, at first, try the basic troubleshooting ways\n\n`1. Sync your device clock.\n2. Restart your device and try again.\n3. Try to play with a different browser.\n4. Try to play with a different device (PC, Mobile, Laptop).\n5. Make sure you are using the right network , Configure Polygon network again.\n6. Clear all browser cache and try again later.\n7. Reinstall metamask, make sure you have your private key before doing so!\n8. Don't use any VPN, turn off your adblock.`\n\n──────────────────────────────────────────────\n**This error occurs while syncing to the blockchain?** \nDid you buy resources on Rarible and transfer them to your farm? If yes, the problem comes from there, go to Menu > Settings > Reset Session and reset your session, do not try to sell or withdraw resources purchased on Rarible, they are bugged and lost.\n\n**This error occurs while withdrawing?**\nMake sure that you do not try to withdraw some resources with a decimal. For example, do not withdraw 5.6 wood but only 5\n\n❓**Still not working ? Wait for further assistance**",
+        description: "This error can mean a lot, at first, try the basic troubleshooting ways\n\n`1. Sync your device clock.\n2. Restart your device and try again.\n3. Try to play with a different browser.\n4. Try to play with a different device (PC, Mobile, Laptop).\n5. Make sure you are using the right network , Configure Polygon network again.\n6. Clear all browser cache and try again later.\n7. Reinstall metamask, make sure you have your private key before doing so!\n8. Don't use any VPN, turn off your adblock.`\n\n──────────────────────────────────────────────\n**This error occurs while syncing to the blockchain?**\nDid you buy resources on Rarible and transfer them to your farm? If yes, the problem comes from there, go to Menu > Settings > Reset Session and reset your session, do not try to sell or withdraw resources purchased on Rarible, they are bugged and lost.\n\n**This error occurs while withdrawing?**\nMake sure that you do not try to withdraw some resources with a decimal. For example, do not withdraw 5.6 wood but only 5\n\n**UI/UX Issue?**\nIf the UI does not display properly and/or the Captcha does not display, make sure you are not using an ad blocker or any other type of blocker. If you are using the Brave browser, disable the shiel in the upper right corner.\n\n❓**Still not working ? Wait for further assistance**",
         color: 0x00FFFF
       }],
       components: [{
@@ -51,6 +62,7 @@ client.on("messageCreate", (message) => {
   // Clock Not In Sync Reply
   for (var i = 0; i < triggerWordsCNIS.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordsCNIS[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🔴 Error: \"Clock Not In Sync\" `,
@@ -76,6 +88,7 @@ client.on("messageCreate", (message) => {
   // Too Many Request Reply
   for (var i = 0; i < triggerWordsTMR.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordsTMR[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🔴 Error: \"Too Many Requests\" `,
@@ -101,6 +114,7 @@ client.on("messageCreate", (message) => {
   // Black and White Farm Reply
   for (var i = 0; i < triggerWordBAWF.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordBAWF[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🟠 Info: \"Grey Farm\" `,
@@ -126,6 +140,7 @@ client.on("messageCreate", (message) => {
   // Blacklisted Farm Reply
   for (var i = 0; i < triggerWordBF.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordBF[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🔴 Error: \"Blacklisted Farm\" `,
@@ -151,6 +166,7 @@ client.on("messageCreate", (message) => {
   // Web3 Error Reply
   for (var i = 0; i < triggerWordWEB3.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordWEB3[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🔴 Error: \"Web3\" `,
@@ -176,6 +192,7 @@ client.on("messageCreate", (message) => {
   // Hacked Waller Reply
   for (var i = 0; i < triggerWordHW.length; i++) {
     if (message.content.toLowerCase().includes(triggerWordHW[i])) {
+      message.react('👀');
       message.reply({ embeds: [{
         type: "rich",
         title: `🟠 Info: \"Hacked Wallet\" `,
