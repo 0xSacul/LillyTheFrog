@@ -11,6 +11,7 @@ client.on("ready", () => {
   console.log("I am ready!"); // Logs when the bot is ready
   client.user.setStatus('available')
   client.user.setActivity("Learning from humans")
+  console.log("scloud active")
 });
 
 client.on("messageCreate", (message) => {
@@ -28,11 +29,12 @@ client.on("messageCreate", (message) => {
   const triggerWordsSWR = ["something went wrong", "smthing went wrong", "tried to sync", "can't sync", "sync error", "cant sync"]; //Something Went Wrong
   const triggerWordsCNIS = ["clock not in sync", "clock not synced", "clock sync error", "clock error"]; //Clock Not In Sync
   const triggerWordsTMR = ["too many request", "to many request", "too many requests", "to many requests"]; //Too Many Requests
-  const triggerWordBAWF = ["my farm is grey", "grey farm", "black and white farm", "no color", "no colors"]; //Black and White Farm
+  const triggerWordBAWF = ["my farm is grey", "grey farm", "black and white farm", "no color", "no colors", "unverified farm", "farm is unverified", "verify my farm"]; //Black and White Farm
   const triggerWordBF = ["blacklisted farm", "blacklisted account", "blacklisted opensea", "farm blacklisted", "goblin detected", "goblin farm", "goblin detect"]; //Blacklisted Farm
   const triggerWordWEB3 = ["web3 error", "wallet not detected", "can't find wallet", "error web3"]; //Web3 Error
   const triggerWordHW = ["wallet hacked", "wallet comprised", "account hacked", "account compromised", "wallet stolen", "account stolen", "hacked wallet", "hacked account"]; //Hacked Wallet
   const triggerWordSR = ["cant migrate", "can't migrate", "supply reach", "supply reached", "want to migrate", "want to create"]; //Supply Reached
+  const triggerWordWS = ["sfl lost", "sfl disappear","item lost", "item disappear", "land reset", "farm reset", "i lost"]; //Withdraw Lost
 
   // Something Went Wrong Reply
   for (var i = 0; i < triggerWordsSWR.length; i++) {
@@ -56,6 +58,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a something went wrong message. Trigger: " + triggerWordsSWR[i]);
       break;
     }
   }
@@ -82,6 +85,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a clock not in sync message. Trigger: " + triggerWordsCNIS[i]);
       break;
     }
   }
@@ -108,6 +112,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a too many request message. Trigger: " + triggerWordsTMR[i]);
       break;
     }
   }
@@ -134,6 +139,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a grey farm message. Trigger: " + triggerWordBAWF[i]);
       break;
     }
   }
@@ -160,6 +166,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a blacklisted farm message. Trigger: " + triggerWordBF[i]);
       break;
     }
   }
@@ -186,6 +193,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a web3 error message. Trigger: " + triggerWordWEB3[i]);
       break;
     }
   }
@@ -212,6 +220,7 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a hacked wallet message. Trigger: " + triggerWordHW[i]);
       break;
     }
   }
@@ -238,6 +247,39 @@ client.on("messageCreate", (message) => {
           }
         ]}],
       });
+      console.log("[INFO] User " + message.author.username + " has asked for a supply reach message. Trigger: " + triggerWordSR[i]);
+      break;
+    }
+  }
+
+  // Withdraw Lost Reply
+  for (var i = 0; i < triggerWordWS.length; i++) {
+    if (message.content.toLowerCase().includes(triggerWordWS[i])) {
+      message.react('👀');
+      message.reply({ embeds: [{
+        type: "rich",
+        title: `🟠 Info: \"Items lost after withdrawing\" `,
+        description: "**Any progress that has not been synchronized on chain before withdrawing will be lost**\n\nUnfortunately what you have lost cannot be recovered. Next time, pay more attention to what is written before doing anything.",
+        color: 0x00FFFF,
+        image: {
+          url: `https://sacul.fr/img/warning-whithdraw.png`,
+          height: 0,
+          width: 0
+        },
+      }],
+      components: [{
+        type: 1,
+          components: [
+          {
+            style: 5,
+            label: `Our Knowledge Base`,
+            url: `https://sunflowerland.freshdesk.com/support/solutions`,
+            disabled: false,
+            type: 2
+          }
+        ]}],
+      });
+      console.log("[INFO] User " + message.author.username + " has asked for a withdraw lost message. Trigger: " + triggerWordWS[i]);
       break;
     }
   }
