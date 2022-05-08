@@ -1,0 +1,12 @@
+{
+    "SWR": ["something went wrong", "smthing went wrong", "tried to sync", "can't sync", "sync error", "cant sync", "can not sync", "sync fail", "transaction fail", "sync on chain stuck"],
+    "CNIS": ["clock not in sync", "clock not synced", "clock sync error", "clock error"], 
+    "TMR": ["too many request", "to many request", "too many requests", "to many requests"], 
+    "BAWF": ["my farm is grey", "grey farm", "black and white farm", "no color", "no colors", "unverified farm", "farm is unverified", "verify my farm", "farm become unverified"], 
+    "BF": ["blacklisted farm", "blacklisted account", "blacklisted opensea", "farm blacklisted", "goblin detected", "goblin farm", "goblin detect", "restricted farm", "restricted account", "blacklisted my farm"], 
+    "WEB3": ["web3 error", "wallet not detected", "can't find wallet", "error web3"], 
+    "HW": ["wallet hacked", "wallet comprised", "account hacked", "account compromised", "wallet stolen", "account stolen", "hacked wallet", "hacked account", "metamask hacked", "metamask compromised", "metamask is hacked", "metamask is compromised", "account is compromised", "account is hacked"], 
+    "SR": ["cant migrate", "can't migrate", "supply reach", "supply reached", "want to migrate", "want to create"], 
+    "WS": ["sfl lost", "sfl disappear","item lost", "item disappear", "land reset", "farm reset", "i lost", "crops gone", "they are gone"],
+    "CW": ["can't withdraw", "cant withdraw", "can not withdraw", "withdraw error", "withdraw failed", "withdraw fail", "transaction error", "transaction mat fail", "metamask error"]
+}
