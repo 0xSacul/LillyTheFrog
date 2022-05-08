@@ -3,7 +3,7 @@
 
 A simple Discord.JS bot, made by Sacul for Sunflower Land.
 
-
+⚠️ Please ask Sacul before using the code.
 
 ## How does it works ?
 
@@ -24,6 +24,7 @@ Then he will automatically reply to the message with a guide to try to solve the
 • Hacked/Stolen wallet
 • Supply reached
 • Withdraw lost
+• Can't withdraw
 ## How to install
 
 Go to `config/config.json` and enter your bot token and the id of the specific channel(s).
