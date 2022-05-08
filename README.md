@@ -5,6 +5,14 @@ A simple Discord.JS bot, made by Sacul for Sunflower Land.
 
 ⚠️ Please ask Sacul before using the code.
 
+🎉 **Discord BOT is online**
+
+Lilly The Frog is curently working on V1.0.1, you can add her to your server with [this invit link](https://discord.com/api/oauth2/authorize?client_id=971788258033950720&permissions=67648&scope=bot)
+
+Permissions required: Send Messages, Read Message History, Add Reactions.
+
+❓She won't work until Sacul sets up the channels she can talk in. Contact me via Discord to do it 
+
 ## How does it works ?
 
 The bot analyzes each message sent in channel defined, if a message contains words he knows, he will give the appropriate answer
