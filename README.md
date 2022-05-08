@@ -7,6 +7,8 @@ A simple Discord.JS bot, made by Sacul for Sunflower Land.
 
 🎉 **Discord BOT is online**
 
+![Lilly The Frog Discord Profile](https://sacul.fr/img/lilly-discord-profile.png)
+
 Lilly The Frog is curently working on V1.0.1, you can add her to your server with [this invit link](https://discord.com/api/oauth2/authorize?client_id=971788258033950720&permissions=67648&scope=bot)
 
 Permissions required: Send Messages, Read Message History, Add Reactions.
